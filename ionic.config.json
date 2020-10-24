@@ -1,5 +1,7 @@
 {
   "name": "UPL-catalog",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

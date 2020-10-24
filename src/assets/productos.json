@@ -1,0 +1,92 @@
+{
+    "Categorias": [
+        {
+            "name": "Herbicidas",
+            "productos": [
+                {
+                    "nombre": "CURRENT",
+                    "caracteristica": "Selectivo para gramíneas en trigo",
+                    "cultivos_rec": ["TRIGO"],
+                    "img": "assets/img/soluciones/herbicidas/current.jpg"
+                  },
+                  {
+                    "nombre": "RONDO AMONIO",
+                    "caracteristica": "No volátil",
+                    "cultivos_rec": ["GIRASOL", "FRUTALES", "VIÑEDOS", "SOJA"],
+                    "img": "assets/img/soluciones/herbicidas/rondo.jpg"
+                  },
+                  {
+                    "nombre": "2,4D AMINA ICONA",
+                    "caracteristica": "Baja volatilidad  y mayor concentración del mercado",
+                    "cultivos_rec": ["ARROZ", "CAÑA DE AZUCAR", "TRIGO", "MAÍZ", "SORGO", "PAPA"],
+                    "img": "assets/img/soluciones/herbicidas/amina.jpg"
+                  },
+                  {
+                    "nombre": "CLIMUR",
+                    "caracteristica": "Fácil absorción por hojas y raíces",
+                    "cultivos_rec": ["SOJA", "ALFALFA"],
+                    "img": "assets/img/soluciones/herbicidas/climur.jpg"
+                  }
+            ]
+        },
+        {
+            "name": "Fungicidas",
+            "productos": [
+                {
+                    "nombre": "CURRENT",
+                    "caracteristica": "Selectivo para gramíneas en trigo",
+                    "cultivos_rec": ["TRIGO"],
+                    "img": "assets/img/soluciones/herbicidas/current.jpg"
+                  },
+                  {
+                    "nombre": "RONDO AMONIO",
+                    "caracteristica": "No volátil",
+                    "cultivos_rec": ["GIRASOL", "FRUTALES", "VIÑEDOS", "SOJA"],
+                    "img": "assets/img/soluciones/herbicidas/rondo.jpg"
+                  },
+                  {
+                    "nombre": "2,4D AMINA ICONA",
+                    "caracteristica": "Baja volatilidad  y mayor concentración del mercado",
+                    "cultivos_rec": ["ARROZ", "CAÑA DE AZUCAR", "TRIGO", "MAÍZ", "SORGO", "PAPA"],
+                    "img": "assets/img/soluciones/herbicidas/amina.jpg"
+                  },
+                  {
+                    "nombre": "CLIMUR",
+                    "caracteristica": "Fácil absorción por hojas y raíces",
+                    "cultivos_rec": ["SOJA", "ALFALFA"],
+                    "img": "assets/img/soluciones/herbicidas/climur.jpg"
+                  }
+            ]
+        },
+        {
+            "name": "Insecticidas",
+            "productos": [
+                {
+                    "nombre": "CURRENT",
+                    "caracteristica": "Selectivo para gramíneas en trigo",
+                    "cultivos_rec": ["TRIGO"],
+                    "img": "assets/img/soluciones/herbicidas/current.jpg"
+                  },
+                  {
+                    "nombre": "RONDO AMONIO",
+                    "caracteristica": "No volátil",
+                    "cultivos_rec": ["GIRASOL", "FRUTALES", "VIÑEDOS", "SOJA"],
+                    "img": "assets/img/soluciones/herbicidas/rondo.jpg"
+                  },
+                  {
+                    "nombre": "2,4D AMINA ICONA",
+                    "caracteristica": "Baja volatilidad  y mayor concentración del mercado",
+                    "cultivos_rec": ["ARROZ", "CAÑA DE AZUCAR", "TRIGO", "MAÍZ", "SORGO", "PAPA"],
+                    "img": "assets/img/soluciones/herbicidas/amina.jpg"
+                  },
+                  {
+                    "nombre": "CLIMUR",
+                    "caracteristica": "Fácil absorción por hojas y raíces",
+                    "cultivos_rec": ["SOJA", "ALFALFA"],
+                    "img": "assets/img/soluciones/herbicidas/climur.jpg"
+                  }
+            ]
+        }
+    ]
+
+}

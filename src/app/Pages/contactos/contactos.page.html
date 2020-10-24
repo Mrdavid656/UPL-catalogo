@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="head">
+      <div>
+        <img alt="logo" height="40" src="assets/fondo/upl-mini.png">
+      </div>
+      <h3 id="segundo">
+        Contacto
+      </h3>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<!-- Mapa -->
+<div id="map_canvas"></div>
+<ion-content>
+  <h1 class="ion-text-center">Contacto</h1>
+  <div class="separador ion-justify-content-center dark">
+    <div class="linea1"></div>
+    <div class="linea2"></div>
+  </div>
+  <p class="sub">
+    Para cualquier consulta, escribanos mediante este formulario de contacto.
+  </p>
+
+  <div class="form">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text"></ion-input>
+      <ion-icon name="person" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo electronico</ion-label>
+      <ion-input type="text"></ion-input>
+      <ion-icon name="mail-open" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="number"></ion-input>
+      <ion-icon name="call" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Asunto</ion-label>
+      <ion-input type="text"></ion-input>
+      <ion-icon name="list" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Consulta</ion-label>
+      <ion-textarea></ion-textarea>
+      <ion-icon name="create" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-button expand="full" (click)="send()">Enviar</ion-button>
+  </div>
+
+  <div class="ion-padding dark">
+    <h2 class="ion-text-center">Contactenos</h2>
+    <div class="separador ion-justify-content-center">
+      <div class="linea1"></div>
+      <div class="linea2"></div>
+    </div>
+    <p class="sub">
+      Si deseas realizar una consulta o solicitud de información puedes
+      contactarnos a los siguientes datos de contacto a continuación:
+    </p>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="pin"></ion-icon>
+        <ion-label class="txt">Av. prolongación Beni entre 7º y 8º a.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="phone-portrait"></ion-icon>
+        <ion-label>78181988</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call"></ion-icon>
+        <ion-label>3-3284407</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="send"></ion-icon>
+        <ion-label>info@upl.com.bo</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer class="dark footer"> </ion-footer>

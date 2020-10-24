@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="head">
+      <div>
+        <img alt="logo" height="40" src="assets/fondo/upl-mini.png">
+      </div>
+      <h3 id="segundo">
+        Productos
+      </h3>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1 class="ion-text-center">Soluciones</h1>
+    <div class="separador ion-justify-content-center">
+      <div class="linea1"></div>
+      <div class="linea2"></div>
+    </div>
+
+  <p id="sub">Encuentre el producto que necesita para su cultivo</p>
+
+  <div class="img-prod">
+    <img src="assets/img/soluciones/agricultura.jpg" />
+  </div>
+
+  <ion-list
+    *ngFor="let categoria of products; let i = index;"
+    class="accordion-list"
+    lines="none"
+    detail="false"
+  >
+    <ion-item
+      tappable
+      (click)="toggleSelection(i)"
+      [ngClass]="{'section-active': categoria.open, 'section': !categoria.open}"
+    >
+      <ion-icon class="ion-margin-end" *ngIf="i == 0" name="flask"></ion-icon>
+      <ion-icon class="ion-margin-end" *ngIf="i == 1" name="water"></ion-icon>
+      <ion-icon class="ion-margin-end" *ngIf="i == 2" name="bug"></ion-icon>
+      <ion-label> {{categoria.name}} </ion-label>
+    </ion-item>
+
+    <div *ngIf="categoria.productos && categoria.open">
+      <ion-slides [options]="sliderConfig">
+        <ion-slide *ngFor="let product of categoria.productos; let j = index">
+          <ion-card class="card">
+            <ion-card-header>
+              <ion-card-title class="title">{{product.nombre}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <img [src]="product.img" />
+              <ion-button expand="full">Detalle</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer class="footer dark"> </ion-footer>

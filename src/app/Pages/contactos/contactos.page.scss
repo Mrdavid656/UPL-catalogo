@@ -1,0 +1,70 @@
+.head{
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  margin-left: 10px;
+  #segundo{
+      margin-left: 10px;
+  }
+}
+
+#map_canvas {
+  width: 100%;
+  height: 200px;
+  border-top: 2px solid orange;
+  border-bottom: 2px solid orange;
+}
+
+.separador {
+  display: flex;
+
+  .linea1 {
+    width: 15%;
+    height: 6px;
+    background: black;
+  }
+  .linea2 {
+    width: 15%;
+    height: 6px;
+    background: lightgray;
+  }
+}
+
+.sub {
+  margin: 20px 0;
+  font-size: 15px;
+  color: lightgray;
+  text-align: center;
+}
+
+.form {
+  padding: 5px;
+}
+
+ion-list{
+    ion-icon{
+        //color: white;
+        margin-right: 15px;
+    }
+
+    ion-label{
+        font-size: 14px;
+    }
+
+}
+
+.txt{
+  font-size: 12px;
+}
+
+ion-item{
+  align-items: center;
+}
+
+ion-footer {
+  margin-top: 60px;
+}
+
+.ion-padding {
+  padding: 5px;
+}
