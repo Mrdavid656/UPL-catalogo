@@ -13,7 +13,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../../Pages/inicio/inicio.module').then( m => m.InicioPageModule)
+            redirectTo: '/inicio'
           }
         ]
       },
@@ -43,11 +43,6 @@ const routes: Routes = [
             loadChildren: () => import('../../Pages/contactos/contactos.module').then( m => m.ContactosPageModule)
           }
         ]
-      },
-      {
-        path: '',
-        redirectTo: 'inicio',
-        pathMatch: 'full'
       }
     ]
   }
