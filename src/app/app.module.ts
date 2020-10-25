@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { Network } from '@ionic-native/network/ngx';
 
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { Contacts } from '@ionic-native/contacts/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +27,9 @@ import { Network } from '@ionic-native/network/ngx';
     Geolocation,
     Network,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Contacts,
+    CallNumber
   ],
   bootstrap: [AppComponent]
 })
