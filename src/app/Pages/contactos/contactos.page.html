@@ -76,11 +76,14 @@
       </ion-item>
 
       <ion-item-sliding *ngFor="let c of contactos">
-        <ion-item>
+        <ion-item class="cont">
           <ion-avatar slot="start">
             <img [src]="c.img">
           </ion-avatar>
-          <ion-label>+{{ c.countrycode }} {{ c.numero }}</ion-label>
+          <ion-label class="name">
+            <h3>{{ c.nombre }}</h3>
+            <p>+{{ c.countrycode }} {{ c.numero }}</p>
+          </ion-label>
         </ion-item>
 
         <ion-item-options side="end">

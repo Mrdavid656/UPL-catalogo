@@ -26,35 +26,27 @@ background-size: cover;
   height: 100%;
 }
 
-.content-menu > .menu-grid > ion-row{
-  height: 50%;
-}
-
-.content-menu > .menu-grid > ion-row > ion-col{
-  padding: 10px;
-  
-}
-
-.content-menu > .menu-grid > ion-row > ion-col > .btn >div{
-  display: grid;
-  width: auto;
-  height: 100%;
-  background-color: darkseagreen;
-  justify-items: center;
-  align-content: space-evenly;
-  border-radius: 15%;
-  border: 1px solid  green;
-}
-
-.content-menu > .menu-grid > ion-row > ion-col > .btn > div > *{
-  justify-content: center;
-}
-
-.content-menu > .menu-grid > ion-row > ion-col > .btn > div > ion-icon{
-  font-size: 40px !important;
+.tipo-row{
+  background: rgba(0,0,0,0.6);
+ // border-bottom: 1px solid orange;
+  //border-top: 1px solid orange;
+  text-align: center;
+  padding-top: 12px;
+  margin-top: 20px;
+  height: 60px;
 }
 
 .btn{
   text-decoration: none;
   color: white;
+  font-size: 25px;
+}
+
+ion-icon{
+  vertical-align: middle;
+}
+
+ion-label{
+  vertical-align: middle;
+  margin-left: 10px;
 }
