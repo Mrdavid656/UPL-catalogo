@@ -31,6 +31,11 @@ const routes: Routes = [
     redirectTo: 'tabs',
     pathMatch: 'full'
   },
+  {
+    path: 'noauth',
+    loadChildren: () => import('./pages/noauth/noauth.module').then( m => m.NoauthPageModule)
+  },
+
 ];
 
 @NgModule({
