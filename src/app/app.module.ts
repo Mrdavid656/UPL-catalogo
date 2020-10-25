@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { Network } from '@ionic-native/network/ngx';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { Contacts } from '@ionic-native/contacts/ngx';
@@ -19,10 +21,11 @@ import { Contacts } from '@ionic-native/contacts/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule],
   providers: [
     StatusBar,
     Geolocation,
+    Network,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Contacts,
