@@ -3,17 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'tabs',
-    pathMatch: 'full'
-  },
-  {
     path: 'inicio',
     loadChildren: () => import('./Pages/inicio/inicio.module').then( m => m.InicioPageModule)
-  },
-  {
-    path: 'productos',
-    loadChildren: () => import('./Pages/productos/productos.module').then( m => m.ProductosPageModule)
   },
   {
     path: 'aboutus',
@@ -24,8 +15,17 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/contactos/contactos.module').then( m => m.ContactosPageModule)
   },
   {
+    path: 'productos',
+    loadChildren: () => import('./Pages/productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./Components/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'tabs',
+    pathMatch: 'full'
   },
 ];
 
