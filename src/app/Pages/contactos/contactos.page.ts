@@ -1,84 +1,99 @@
 import { Component, OnInit } from "@angular/core";
 import { ToastController, Platform } from "@ionic/angular";
-import {
-  GoogleMaps,
-  GoogleMap,
-  GoogleMapsEvent,
-  Marker,
-  GoogleMapsAnimation,
-  MyLocation,
-} from "@ionic-native/google-maps";
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+declare var google;
 
 @Component({
   selector: "app-contactos",
   templateUrl: "./contactos.page.html",
   styleUrls: ["./contactos.page.scss"],
 })
-export class ContactosPage implements OnInit {
-  map: GoogleMap;
+
+export class ContactosPage {
+  
   address: string;
 
-  constructor(public toastCtrl: ToastController, private platform: Platform) {}
+  markers: any = [
+    {
+      title: 'Direccion actual',
+      latitude: '-17.8126848',
+      longitude: '-63.176703999999994'
+    },{
+      title: 'Direccion Nueva',
+      latitude: '-17.8314634',
+      longitude: '-63.1830588'
+    },{
+      title: 'Home',
+      latitude: '-17.8391789',
+      longitude: '-63.187148'
+    }];
+
+  constructor(private toastCtrl: ToastController, private platform: Platform, private geolocation: Geolocation) {}
+
+  infoWindows: any = [];
+  map: any;
 
   ngOnInit() {
     this.platform.ready();
     this.loadMap();
   }
 
-  loadMap() {
-    this.map = GoogleMaps.create("map_canvas", {
-      // camera: {
-      //   target: {
-      //     lat: 43.0741704,
-      //     lng: -89.3809802
-      //   },
-      //   zoom: 18,
-      //   tilt: 30
-      // }
+  async loadMap() {
+    const rta = await this.geolocation.getCurrentPosition();
+    const myLatLng = {
+      lat: rta.coords.latitude,
+      lng: rta.coords.longitude
+    };
+    console.log(myLatLng);
+
+    const mapEle: HTMLElement = document.getElementById('map');
+    this.map = new google.maps.Map(mapEle, {
+      center: myLatLng,
+      zoom: 15
     });
-    this.goToMyLocation();
+
+    this.addMarkersToMap(this.markers);
   }
 
-  goToMyLocation() {
-    this.map.clear();
-
-    // Get the location of you
-    this.map
-      .getMyLocation()
-      .then((location: MyLocation) => {
-        console.log(JSON.stringify(location, null, 2));
-
-        // Move the map camera to the location with animation
-        this.map.animateCamera({
-          target: location.latLng,
-          zoom: 17,
-          duration: 5000,
+  addMarkersToMap(markers){
+    for (let marker of markers) {
+        let position = new google.maps.LatLng(marker.latitude, marker.longitude);
+        let mapMarker = new google.maps.Marker({
+          position: position,
+          title: marker.title,
+          latitude: marker.latitude,
+          longitude: marker.longitude
         });
 
-        //add a marker
-        let marker: Marker = this.map.addMarkerSync({
-          title: "UPL EMPRESA",
-          snippet: "Av. prolongación Beni entre 7º y 8º anillo",
-          position: location.latLng,
-          animation: GoogleMapsAnimation.BOUNCE,
-        });
+        mapMarker.setMap(this.map);
+        this.addInfoWindowToMarker(mapMarker);
+    }
+  }
 
-        //show the infoWindow
-        marker.showInfoWindow();
+  addInfoWindowToMarker(marker){
+    let infoWindowContent = '<div style="color: black;" class="contenido">' + 
+    '<h2 id="firstHeading" class="firstHeading">' + marker.title + '</h2>' + 
+    '<p>Latitude: ' + marker.latitude + '</p>' + 
+    '<p>Longitude: ' + marker.longitude + '</p>' +
+    '</div>';
 
-        //If clicked it, display the alert
-        marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-          this.showToast("clicked!");
-        });
+    let infoWindow = new google.maps.InfoWindow({
+      content: infoWindowContent
+    });
 
-        this.map.on(GoogleMapsEvent.MAP_READY).subscribe((data) => {
-          console.log("Click MAP", data);
-        });
-      })
-      .catch((err) => {
-        //this.loading.dismiss();
-        this.showToast(err.error_message);
-      });
+    marker.addListener('click', () => {
+      this.closeAllWindows();
+      infoWindow.open(this.map, marker);
+    });
+    this.infoWindows.push(infoWindow);
+  }
+
+  closeAllWindows(){
+    for (let window of this.infoWindows) {
+      window.close();
+    }
   }
 
   async showToast(message: string) {
@@ -90,5 +105,7 @@ export class ContactosPage implements OnInit {
     toast.present();
   }
 
-  send() {}
+  send(){
+
+  }
 }

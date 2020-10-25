@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'productos',
-    loadChildren: () => import('./Pages/productos/productos.module').then( m => m.ProductosPageModule)
-  },
-  {
     path: 'aboutus',
     loadChildren: () => import('./Pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
   },
@@ -23,8 +19,17 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/contactos/contactos.module').then( m => m.ContactosPageModule)
   },
   {
+    path: 'productos',
+    loadChildren: () => import('./Pages/productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./Components/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'tabs',
+    pathMatch: 'full'
   },
 ];
 
