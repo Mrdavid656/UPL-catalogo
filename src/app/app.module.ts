@@ -13,6 +13,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { Contacts } from '@ionic-native/contacts/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     Geolocation,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Contacts,
+    CallNumber
   ],
   bootstrap: [AppComponent]
 })

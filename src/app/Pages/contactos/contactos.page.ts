@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ToastController, Platform } from "@ionic/angular";
 
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Geolocation } from "@ionic-native/geolocation/ngx";
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 declare var google;
 
@@ -10,27 +11,49 @@ declare var google;
   templateUrl: "./contactos.page.html",
   styleUrls: ["./contactos.page.scss"],
 })
-
 export class ContactosPage {
-  
+
+  url:string = "https://wa.me/";
+
+  contactos = [
+    {
+      img: 'assets/perfil/perfil.jpg',
+      numero: '76632414',
+      countrycode: '591'
+    },
+    {
+      img: 'assets/perfil/perfil2.jpg',
+      numero: '67849167',
+      countrycode: '591'
+    }
+  ]
+
   address: string;
 
   markers: any = [
     {
-      title: 'Direccion actual',
-      latitude: '-17.8126848',
-      longitude: '-63.176703999999994'
-    },{
-      title: 'Direccion Nueva',
-      latitude: '-17.8314634',
-      longitude: '-63.1830588'
-    },{
-      title: 'Home',
-      latitude: '-17.8391789',
-      longitude: '-63.187148'
-    }];
+      title: "Direccion actual",
+      latitude: "-17.8126848",
+      longitude: "-63.176703999999994",
+    },
+    {
+      title: "Direccion Nueva",
+      latitude: "-17.8314634",
+      longitude: "-63.1830588",
+    },
+    {
+      title: "Home",
+      latitude: "-17.8391789",
+      longitude: "-63.187148",
+    },
+  ];
 
-  constructor(private toastCtrl: ToastController, private platform: Platform, private geolocation: Geolocation) {}
+  constructor(
+    private toastCtrl: ToastController,
+    private platform: Platform,
+    private geolocation: Geolocation,
+    private callNumber: CallNumber
+  ) {}
 
   infoWindows: any = [];
   map: any;
@@ -44,53 +67,60 @@ export class ContactosPage {
     const rta = await this.geolocation.getCurrentPosition();
     const myLatLng = {
       lat: rta.coords.latitude,
-      lng: rta.coords.longitude
+      lng: rta.coords.longitude,
     };
     console.log(myLatLng);
 
-    const mapEle: HTMLElement = document.getElementById('map');
+    const mapEle: HTMLElement = document.getElementById("map");
     this.map = new google.maps.Map(mapEle, {
       center: myLatLng,
-      zoom: 15
+      zoom: 15,
     });
 
     this.addMarkersToMap(this.markers);
   }
 
-  addMarkersToMap(markers){
+  addMarkersToMap(markers) {
     for (let marker of markers) {
-        let position = new google.maps.LatLng(marker.latitude, marker.longitude);
-        let mapMarker = new google.maps.Marker({
-          position: position,
-          title: marker.title,
-          latitude: marker.latitude,
-          longitude: marker.longitude
-        });
+      let position = new google.maps.LatLng(marker.latitude, marker.longitude);
+      let mapMarker = new google.maps.Marker({
+        position: position,
+        title: marker.title,
+        latitude: marker.latitude,
+        longitude: marker.longitude,
+      });
 
-        mapMarker.setMap(this.map);
-        this.addInfoWindowToMarker(mapMarker);
+      mapMarker.setMap(this.map);
+      this.addInfoWindowToMarker(mapMarker);
     }
   }
 
-  addInfoWindowToMarker(marker){
-    let infoWindowContent = '<div style="color: black;" class="contenido">' + 
-    '<h2 id="firstHeading" class="firstHeading">' + marker.title + '</h2>' + 
-    '<p>Latitude: ' + marker.latitude + '</p>' + 
-    '<p>Longitude: ' + marker.longitude + '</p>' +
-    '</div>';
+  addInfoWindowToMarker(marker) {
+    let infoWindowContent =
+      '<div style="color: black;" class="contenido">' +
+      '<h2 id="firstHeading" class="firstHeading">' +
+      marker.title +
+      "</h2>" +
+      "<p>Latitude: " +
+      marker.latitude +
+      "</p>" +
+      "<p>Longitude: " +
+      marker.longitude +
+      "</p>" +
+      "</div>";
 
     let infoWindow = new google.maps.InfoWindow({
-      content: infoWindowContent
+      content: infoWindowContent,
     });
 
-    marker.addListener('click', () => {
+    marker.addListener("click", () => {
       this.closeAllWindows();
       infoWindow.open(this.map, marker);
     });
     this.infoWindows.push(infoWindow);
   }
 
-  closeAllWindows(){
+  closeAllWindows() {
     for (let window of this.infoWindows) {
       window.close();
     }
@@ -105,7 +135,21 @@ export class ContactosPage {
     toast.present();
   }
 
-  send(){
-
+  // Aqui se deberia poder crear un mensaje y pasar la consulta a un gmail estatico.
+  send() {
+    console.log('Mensaje Enviado.');
   }
+
+
+  // Aqui recibe el número para hacer la llamada
+  call(numero: string, ){
+    this.callNumber.callNumber(numero, true);
+  }
+
+  // Aqui recibe el numero y el codigo del país para poder redirigirse a whatsapp
+  openWssp(numero: string, code: string){
+    let newUrl = this.url+code+numero;
+    window.open(newUrl);
+  }
+
 }
