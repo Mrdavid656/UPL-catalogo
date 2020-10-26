@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { ToastController, Platform } from "@ionic/angular";
 
-import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Platform, ToastController } from '@ionic/angular';
+
 
 declare var google;
 
@@ -11,6 +12,7 @@ declare var google;
   templateUrl: "./contactos.page.html",
   styleUrls: ["./contactos.page.scss"],
 })
+
 export class ContactosPage {
 
   url:string = "https://wa.me/";
@@ -41,9 +43,9 @@ export class ContactosPage {
   ];
 
   constructor(
-    private toastCtrl: ToastController,
-    private platform: Platform,
-    private geolocation: Geolocation,
+    public toastCtrl: ToastController,
+    public platform: Platform,
+    public geolocation: Geolocation,
     private callNumber: CallNumber
   ) {}
 

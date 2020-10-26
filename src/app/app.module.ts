@@ -16,7 +16,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Network } from '@ionic-native/network/ngx';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
-import { Contacts } from '@ionic-native/contacts/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,10 +25,9 @@ import { Contacts } from '@ionic-native/contacts/ngx';
     StatusBar,
     Geolocation,
     Network,
+    CallNumber,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Contacts,
-    CallNumber
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
