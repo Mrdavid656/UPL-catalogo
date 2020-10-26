@@ -1,3 +1,8 @@
+.principal{
+    display: flex;
+    justify-content: space-between;
+}
+
 .head{
     display: flex;
     align-items: center;
@@ -6,6 +11,17 @@
     #segundo{
         margin-left: 10px;
     }
+}
+
+.icon{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5%;
+}
+
+.icon ion-icon{
+    width: 30px;
+    height: 30px;
 }
 
 #sub{

@@ -1,29 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>V/V % Calculator</ion-title>
+    <div class="head">
+      <ion-buttons>
+        <ion-back-button defaultHref="productos"></ion-back-button>
+        <ion-title>V/V % Calculator</ion-title>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-list>
-  <ion-item>
-    <ion-label>GALLONS (US)</ion-label>
-    <br>
-    <ion-input placeholder="INPUT"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>V/V(%)</ion-label>
-    <br>
-    <ion-input placeholder="INPUT"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-button>Show Me</ion-button>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-label>YOU WILL NEED:</ion-label>
-    <ion-input></ion-input>
-    <ion-label>LITRES OF ADJUVANT</ion-label>
-  </ion-item>
-</ion-list>
+  <div id="container">
+    <ion-list id="list" lines="none">
+      <ion-item class="item" >
+        <ion-label><strong>GALONES (US)</strong></ion-label>
+      </ion-item>
+      <ion-item class="item">
+        <ion-input class="in" placeholder="US" type="numeric" [(ngModel)]="valor1"></ion-input>
+      </ion-item>
+      <ion-item class="item">
+        <ion-label><strong>V/V(%)</strong></ion-label>
+      </ion-item>
+      <ion-item class="item">
+        <ion-input class="in" placeholder="%" type="numeric" [(ngModel)]="valor2"></ion-input>
+      </ion-item>
+      <ion-item class="item">
+        <ion-button expand="block" size="default" class="btn" (click)="calcular()">MOSTRAR</ion-button>
+      </ion-item>
+      <br>
+      <ion-item class="item">
+        <ion-label>USTED NECESITARA:</ion-label>
+      </ion-item>
+      <ion-item class="item">
+        <ion-input class="in" placeholder="0" type="text" [(ngModel)]="res"></ion-input>
+      </ion-item>
+      <ion-item class="item">
+        <ion-label><strong>LITROS DE ADYUVANTE</strong></ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

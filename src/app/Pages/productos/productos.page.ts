@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-productos',
@@ -19,7 +20,7 @@ export class ProductosPage implements OnInit {
     slidesPerView: 1.3
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public navCtrl: NavController) { }
 
   ngOnInit() {
     this.http.get('assets/productos.json').subscribe(
@@ -42,7 +43,11 @@ export class ProductosPage implements OnInit {
 
   toggleItem(index, childIndex){
     this.products[index].productos[childIndex].open = !this.products[index].productos[childIndex].open;
+  }
 
+  enviar(){
+    console.log("REDIRECCIONAR");
+    this.navCtrl.navigateForward(['/calculadora']);
   }
 
 }
