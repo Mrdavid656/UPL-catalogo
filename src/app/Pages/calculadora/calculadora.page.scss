@@ -1,0 +1,40 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container strong {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+#list{
+    padding: 0px 15%;
+}
+
+.item{
+    text-align: center;
+}
+
+.btn{
+    margin: auto;
+}
+
+.in{
+    font-size: 20px;
+    line-height: 22px;
+    border-bottom: 1px solid white;
+}
+
+ion-title{
+    text-align: left;
+    font-weight: bold;
+}
