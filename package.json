@@ -68,6 +68,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "mx.ferreyra.callnumber": "0.0.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
@@ -88,8 +89,9 @@
       "cordova-plugin-geolocation": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-network-information": {},
+      "mx.ferreyra.callnumber": {},
       "cordova-plugin-contacts": {},
-      "mx.ferreyra.callnumber": {}
+      "call-number": {}
     },
     "platforms": [
       "android"
