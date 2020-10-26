@@ -19,11 +19,13 @@ export class ContactosPage {
 
   contactos = [
     {
+      nombre: 'Javier Exeni',
       img: 'assets/perfil/perfil.jpg',
       numero: '76632414',
       countrycode: '591'
     },
     {
+      nombre: 'Monkey Graphic',
       img: 'assets/perfil/perfil2.jpg',
       numero: '67849167',
       countrycode: '591'
@@ -34,20 +36,10 @@ export class ContactosPage {
 
   markers: any = [
     {
-      title: "Direccion actual",
-      latitude: "-17.8126848",
-      longitude: "-63.176703999999994",
-    },
-    {
-      title: "Direccion Nueva",
-      latitude: "-17.8314634",
-      longitude: "-63.1830588",
-    },
-    {
-      title: "Home",
-      latitude: "-17.8391789",
-      longitude: "-63.187148",
-    },
+      title: "UPL - Dirección",
+      latitude: "-17.740763",
+      longitude: "-63.174684",
+    }
   ];
 
   constructor(
@@ -66,10 +58,9 @@ export class ContactosPage {
   }
 
   async loadMap() {
-    const rta = await this.geolocation.getCurrentPosition();
     const myLatLng = {
-      lat: rta.coords.latitude,
-      lng: rta.coords.longitude,
+      lat: -17.740763,
+      lng: -63.174684,
     };
     console.log(myLatLng);
 

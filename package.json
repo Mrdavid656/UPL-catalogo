@@ -31,6 +31,10 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.1",
+<<<<<<< HEAD
+=======
+    "call-number": "^1.0.1",
+>>>>>>> 42802de83f2ddeb1beb726bc83c632f962d674f2
     "cordova-android": "9.0.0",
     "cordova-plugin-contacts": "^3.0.1",
     "rxjs": "~6.5.5",
@@ -87,8 +91,13 @@
       "cordova-plugin-geolocation": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-network-information": {},
+<<<<<<< HEAD
       "mx.ferreyra.callnumber": {},
       "cordova-plugin-contacts": {}
+=======
+      "cordova-plugin-contacts": {},
+      "mx.ferreyra.callnumber": {}
+>>>>>>> 42802de83f2ddeb1beb726bc83c632f962d674f2
     },
     "platforms": [
       "android"
