@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'noauth',
     loadChildren: () => import('./pages/noauth/noauth.module').then( m => m.NoauthPageModule)
+  },  {
+    path: 'calculadora',
+    loadChildren: () => import('./pages/calculadora/calculadora.module').then( m => m.CalculadoraPageModule)
   },
+
 
 ];
 

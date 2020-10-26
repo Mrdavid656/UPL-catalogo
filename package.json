@@ -21,6 +21,8 @@
     "@angular/router": "~10.0.0",
     "@capacitor/cli": "^2.4.2",
     "@capacitor/core": "^2.4.2",
+    "@ionic-native/call-number": "^5.29.0",
+    "@ionic-native/contacts": "^5.29.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/geolocation": "^5.29.0",
     "@ionic-native/http": "^5.29.0",
@@ -45,6 +47,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "call-number": "^1.0.1",
     "codelyzer": "^6.0.0",
     "cordova-plugin-advanced-http": "^3.1.0",
     "cordova-plugin-device": "^2.0.2",
@@ -83,7 +86,9 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-geolocation": {},
       "cordova-sqlite-storage": {},
-      "cordova-plugin-network-information": {}
+      "cordova-plugin-network-information": {},
+      "mx.ferreyra.callnumber": {},
+      "cordova-plugin-contacts": {}
     },
     "platforms": [
       "android"
