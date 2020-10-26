@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-
+import { Platform, ToastController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Platform, ToastController } from '@ionic/angular';
+
 
 
 declare var google;
